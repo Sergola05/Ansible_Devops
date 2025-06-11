@@ -95,6 +95,11 @@ nano --version
 docker exec -it ansible_target bash
 ls /home/ansible
 ```
+📌 Через Ansible:
+
+```bash
+ansible remote -i inventory.ini -m shell -a "cat /home/ansible/hello.txt" -b
+```
 
 ---
 
