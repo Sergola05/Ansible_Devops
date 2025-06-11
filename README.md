@@ -76,6 +76,12 @@ ansible remote -i inventory.ini -m file -a "path=/home/ansible/delete_me.txt sta
 ansible remote -i inventory.ini -m apt -a "name=nano state=present update_cache=yes" -b
 ```
 
+🔹 Запустить Playbook:
+
+```bash
+ansible-playbook -i inventory.ini manage_files.yml
+```
+
 ---
 
 ## 🔍 Проверка результатов
