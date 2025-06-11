@@ -97,9 +97,31 @@ ls /home/ansible
 ```
 📌 Через Ansible:
 
+🔍 Проверка:
 ```bash
 ansible remote -i inventory.ini -m shell -a "cat /home/ansible/hello.txt" -b
 ```
+Ожидаемый вывод:
+Привет от Ansible
+
+```bash
+ansible remote -i inventory.ini -m shell -a "cat /home/ansible/hello.txt" -b
+```
+Ожидаемый вывод:
+Привет от Ansible
+Файл изменён Ansible
+
+```bash
+ansible remote -i inventory.ini -m shell -a "ls /home/ansible/delete_me.txt" -b
+```
+Ожидаемый вывод:
+ls: cannot access '/home/ansible/delete_me.txt': No such file or directory
+
+```bash
+ansible remote -i inventory.ini -m shell -a "nano --version" -b
+```
+Ожидаемый вывод (пример):
+GNU nano, версия 4.8
 
 ---
 
