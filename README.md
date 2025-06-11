@@ -134,16 +134,6 @@ ansible remote -i inventory.ini -m shell -a "nano --version" -b
 
 ---
 
-## 📤 Публикация в Git
 
-```bash
-git init
-git remote add origin https://github.com/your_username/ansible_project_manual.git
-git add .
-git commit -m "Ansible + Docker + SSH test project"
-git push -u origin master
-```
-
----
 
 
