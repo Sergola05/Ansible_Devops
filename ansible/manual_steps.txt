@@ -1,0 +1,11 @@
+# ===== ШАГ 1. СОЗДАТЬ ФАЙЛ =====
+ansible remote -i inventory.ini -m copy -a "content='Привет от Ansible\n' dest=/home/ansible/hello.txt" -b
+
+# ===== ШАГ 2. ИЗМЕНИТЬ ФАЙЛ =====
+ansible remote -i inventory.ini -m lineinfile -a "path=/home/ansible/hello.txt line='Файл изменён Ansible'" -b
+
+# ===== ШАГ 3. УДАЛИТЬ ФАЙЛ (если был) =====
+ansible remote -i inventory.ini -m file -a "path=/home/ansible/delete_me.txt state=absent" -b
+
+# ===== ШАГ 4. УСТАНОВИТЬ ПАКЕТ (например, nano) =====
+ansible remote -i inventory.ini -m apt -a "name=nano state=present update_cache=yes" -b

@@ -1,0 +1,26 @@
+---
+- name: Управление файлами на удалённой машине
+  hosts: remote
+  become: yes
+  tasks:
+
+    - name: Создать файл
+      copy:
+        content: "Привет от Ansible\n"
+        dest: /home/ansible/hello.txt
+
+    - name: Изменить файл
+      lineinfile:
+        path: /home/ansible/hello.txt
+        line: "Файл изменён Ansible"
+
+    - name: Удалить файл
+      file:
+        path: /home/ansible/delete_me.txt
+        state: absent
+
+    - name: Установить программу
+      apt:
+        name: nano
+        state: present
+        update_cache: yes

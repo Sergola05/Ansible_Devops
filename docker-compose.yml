@@ -1,0 +1,7 @@
+version: "3"
+services:
+  remote:
+    build: .
+    container_name: ansible_target
+    ports:
+      - "2222:22"
